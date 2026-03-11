@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Bill</title>
+        <style>
+            body{
+                text-align: center;
+                background: rgb(19, 83, 83);
+            }
+            .box{
+                width:500px;
+                margin: 150px auto;
+                padding: 20px;
+                background: lightcoral;
+                color:black;
+                border: dashed 4px maroon;
+            }
+            h1{color: rgb(5, 28, 84);}
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1>TOTAL GST AMOUNT</h1>
+            <form method="POST">
+                {% csrf_token %}
+                Price:
+                <input type="number" name="Price" required>
+                <br>
+                <br>
+                GST%:
+                <input type="number" name="GST" required>
+                <br>
+                <br>
+                <button type="submit">Calculate</button>
+                <br>
+                <br>
+                TOTAL:
+                <input type="number" value="{{Total}}">
+            </form>
+        </div>
+    </body>
+</html>
